@@ -35,7 +35,7 @@ const AccountInfo = () => {
                         className="object-cover w-24 h-24 border-2 border-gray-300 rounded-full"
                      />
                      
-                     <span className="absolute bottom-0 right-0 p-2 bg-gray-200 rounded-full">
+                     <span className="absolute bottom-0 right-0 p-2 bg-[#9445ee]  rounded-full">
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
                            height="20px"
@@ -61,12 +61,10 @@ const AccountInfo = () => {
                   <h3 className="text-lg font-bold">
                      {user?.fullName || "No Name"}
                   </h3>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-black-500">
                      Email: {user?.email || "No Email"}
                   </p>
-                  <p className="text-sm text-gray-500">
-                     Company: {user?.company || "No Company"}
-                  </p>
+                 
                </div>
             </div>
 

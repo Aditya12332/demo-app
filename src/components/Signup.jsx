@@ -13,7 +13,6 @@ const Signup = () => {
       isAgency: "no",
    });
    const dispatch = useDispatch();
-
    const navigate = useNavigate();
 
    const handleChange = (e) => {
@@ -26,126 +25,56 @@ const Signup = () => {
       dispatch(login(formData));
       alert("Signup successful!");
       navigate("/login");
-      
    };
 
    return (
       <div className="flex flex-col items-center justify-end min-h-screen px-6 text-center bg-white">
          <div className="flex flex-col w-full max-w-md min-h-screen p-6 bg-[#fbfbfb] rounded-lg shadow-md">
-            <h1 className="mb-5 text-3xl font-bold text-left">
-               Signin to your PopX account
-            </h1>
+            <h1 className="mb-5 text-3xl font-bold text-left">Sign in to your PopX account</h1>
+            <form onSubmit={handleSubmit} className="space-y-6">
+               {[
+                  { label: "Full Name", name: "fullName", type: "text" },
+                  { label: "Phone Number", name: "phoneNumber", type: "tel" },
+                  { label: "Email Address", name: "email", type: "email" },
+                  { label: "Password", name: "password", type: "password" },
+                  { label: "Company Name", name: "company", type: "text" },
+               ].map(({ label, name, type }) => (
+                  <div key={name} className="relative">
+                     <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
+                        {label}
+                     </label>
+                     <input
+                        type={type}
+                        name={name}
+                        value={formData[name]}
+                        onChange={handleChange}
+                        required
+                        className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
+                     />
+                  </div>
+               ))}
 
-            <form onSubmit={handleSubmit} className="space-y-6 ">
-               {/* Full Name Field */}
-               <div className="relative">
-   <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
-      Full Name
-   </label>
-   <input
-      type="text"
-      name="fullName"
-      value={formData.fullName}
-      onChange={handleChange}
-      required
-      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
-   />
-</div>
-
-               {/* Phone Number Field */}
-               <div className="relative">
-                 <label className="absolute -top-3 left-3 px-1 text-sm text-purple-600 bg-[#fbfbfb]">
-                  Phone Number
-                 </label>
-                 <input
-                   type="tel"
-                   name="phoneNumber"
-                   value={formData.phoneNumber}
-                   onChange={handleChange}
-                   required
-                   className="block w-full px-3 pt-4 pb-2 text-sm text-gray-900 bg-transparent border-2 border-purple-600 rounded-lg focus:outline-none focus:border-purple-700"
-                 />
-                </div>
-
-
-               {/* Email Address Field */}
-               <div className="relative">
-   <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
-      Email Address
-   </label>
-   <input
-      type="email"
-      name="email"
-      value={formData.email}
-      onChange={handleChange}
-      required
-      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
-   />
-</div>
-               {/* Password Field */}
-               <div className="relative">
-   <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
-      Password
-   </label>
-   <input
-      type="password"
-      name="password"
-      value={formData.password}
-      onChange={handleChange}
-      required
-      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
-   />
-</div>
-
-               {/* Company Name Field (New) */}
-               <div className="relative">
-   <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
-      Company Name
-   </label>
-   <input
-      type="text"
-      name="company"
-      value={formData.company}
-      onChange={handleChange}
-      required
-      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
-   />
-</div>
-
-
-               <p className="text-start">Are you in Agency</p>
+               <p className="text-start">Are you in an Agency?</p>
                <div className="flex items-center space-x-4">
-                
-                  <label className="flex items-center space-x-2">
-                     <input
-                        type="radio"
-                        name="isAgency"
-                        value="yes"
-                        checked={formData.isAgency === "yes"}
-                        onChange={handleChange}
-                        className="text-blue-500"
-                     />
-                     <span>Yes</span>
-                  </label>
-
-                  <label className="flex items-center space-x-2">
-                     <input
-                        type="radio"
-                        name="isAgency"
-                        value="no"
-                        checked={formData.isAgency === "no"}
-                        onChange={handleChange}
-                        className="text-blue-500"
-                     />
-                     <span>No</span>
-                  </label>
+                  {["yes", "no"].map((value) => (
+                     <label key={value} className="flex items-center space-x-2">
+                        <input
+                           type="radio"
+                           name="isAgency"
+                           value={value}
+                           checked={formData.isAgency === value}
+                           onChange={handleChange}
+                           className="text-blue-500"
+                        />
+                        <span>{value.charAt(0).toUpperCase() + value.slice(1)}</span>
+                     </label>
+                  ))}
                </div>
 
-               {/* Submit Button */}
                <div className="mt-20 mb-4">
                   <button
                      type="submit"
-                     className="w-full py-3 mt-auto font-semibold text-center text-white transition bg-purple-600 rounded-md hover:bg-purple-700"
+                     className="w-full py-3 font-semibold text-white transition bg-purple-600 rounded-md hover:bg-purple-700"
                   >
                      Create Account
                   </button>
