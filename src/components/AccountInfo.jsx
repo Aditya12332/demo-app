@@ -22,7 +22,7 @@ const AccountInfo = () => {
    return (
     <div className="flex flex-col items-center justify-end min-h-screen px-6 text-center bg-white">
          <div className="flex flex-col w-full max-w-md min-h-screen  bg-[#fbfbfb]  shadow-md">
-            <h1 className="p-4 mb-4 text-2xl font-bold text-left bg-white ">
+            <h1 className="p-4 mb-4 font-rubik text-rubik-18 font-regular text-textColor capitalize text-left bg-white ">
                Account Settings
             </h1>
 
@@ -58,20 +58,19 @@ const AccountInfo = () => {
 
               
                <div className="flex flex-col text-left">
-                  <h3 className="text-lg font-bold">
+                  <h3 className="text-lg font-rubik text-rubik-15 font-medium text-textColor font-bold">
                      {user?.fullName || "No Name"}
                   </h3>
-                  <p className="text-sm text-black-500">
-                     Email: {user?.email || "No Email"}
+                  <p className="font-rubik text-rubik-14 font-regular text-textColor">
+                     {user?.email || "No Email"}
                   </p>
                  
                </div>
             </div>
 
             {/* Bio Section */}
-            <div className="p-4 mt-6 text-left">
-               <h2 className="font-semibold text-purple-500">Bio Section</h2>
-               <p className="text-gray-500 text-md">
+            <div className="p-3 mt- 5 text-left">
+               <p className="font-rubik text-rubik-14 font-regular text-textColor">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Vitae, quod consectetur? Animi adipisci dicta modi itaque,
                   praesentium illo hic est.

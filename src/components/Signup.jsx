@@ -30,8 +30,8 @@ const Signup = () => {
    return (
       <div className="flex flex-col items-center justify-end min-h-screen px-6 text-center bg-white">
          <div className="flex flex-col w-full max-w-md min-h-screen p-6 bg-[#fbfbfb] rounded-lg shadow-md">
-            <h1 className="mb-5 text-3xl font-bold text-left">Sign in to your PopX account</h1>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <h1 className="mb-5 text-3xl font-bold text-left font-rubik text-rubik-28 font-medium text-textColor capitalize">Create your your PopX account</h1>
+            <form onSubmit={handleSubmit} className="space-y-6 font-rubik text-rubik-13 font-regular">
                {[
                   { label: "Full Name", name: "fullName", type: "text" },
                   { label: "Phone Number", name: "phoneNumber", type: "tel" },
@@ -54,8 +54,8 @@ const Signup = () => {
                   </div>
                ))}
 
-               <p className="text-start">Are you in an Agency?</p>
-               <div className="flex items-center space-x-4">
+               <p className="text-start font-rubik text-rubik-13 font-regular">Are you in an Agency?</p>
+               <div className="flex items-center space-x-4 font-rubik text-rubik-14 font-regular">
                   {["yes", "no"].map((value) => (
                      <label key={value} className="flex items-center space-x-2">
                         <input
@@ -74,9 +74,9 @@ const Signup = () => {
                <div className="mt-20 mb-4">
                   <button
                      type="submit"
-                     className="w-full py-3 font-semibold text-white transition bg-purple-600 rounded-md hover:bg-purple-700"
+                     className="w-full py-3 font-semibold text-white transition bg-purple-600 rounded-md hover:bg-purple-700 "
                   >
-                     Create Account
+                    <p className="font-rubik text-rubik-16 font-regular "> Create Account</p> 
                   </button>
                </div>
             </form>
