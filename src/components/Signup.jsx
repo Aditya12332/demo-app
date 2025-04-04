@@ -39,83 +39,79 @@ const Signup = () => {
             <form onSubmit={handleSubmit} className="space-y-6 ">
                {/* Full Name Field */}
                <div className="relative">
-                  <input
-                     type="text"
-                     name="fullName"
-                     value={formData.fullName}
-                     onChange={handleChange}
-                     required
-                     className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-purple-600 peer"
-                     placeholder=" "
-                  />
-                  <label className="absolute px-1 text-sm text-purple-600 duration-300 transform scale-75 -translate-y-4 bg-[#fbfbfb] top-2 left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:top-1 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
-                     Full Name
-                  </label>
-               </div>
+   <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
+      Full Name
+   </label>
+   <input
+      type="text"
+      name="fullName"
+      value={formData.fullName}
+      onChange={handleChange}
+      required
+      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
+   />
+</div>
 
                {/* Phone Number Field */}
                <div className="relative">
-                  <input
-                     type="tel"
-                     name="phoneNumber"
-                     value={formData.phoneNumber}
-                     onChange={handleChange}
-                     required
-                     className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-purple-600 peer"
-                     placeholder=" "
-                  />
-                  <label className="absolute px-1 text-sm text-purple-600 duration-300 transform scale-75 -translate-y-4 bg-[#fbfbfb] top-2 left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:top-1 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
-                     Phone Number
-                  </label>
-               </div>
+                 <label className="absolute -top-3 left-3 px-1 text-sm text-purple-600 bg-[#fbfbfb]">
+                  Phone Number
+                 </label>
+                 <input
+                   type="tel"
+                   name="phoneNumber"
+                   value={formData.phoneNumber}
+                   onChange={handleChange}
+                   required
+                   className="block w-full px-3 pt-4 pb-2 text-sm text-gray-900 bg-transparent border-2 border-purple-600 rounded-lg focus:outline-none focus:border-purple-700"
+                 />
+                </div>
+
 
                {/* Email Address Field */}
                <div className="relative">
-                  <input
-                     type="email"
-                     name="email"
-                     value={formData.email}
-                     onChange={handleChange}
-                     required
-                     className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-purple-600 peer"
-                     placeholder=" "
-                  />
-                  <label className="absolute px-1 text-sm text-purple-600 duration-300 transform scale-75 -translate-y-4 bg-[#fbfbfb] top-2 left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:top-1 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
-                     Email Address
-                  </label>
-               </div>
-
+   <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
+      Email Address
+   </label>
+   <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      required
+      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
+   />
+</div>
                {/* Password Field */}
                <div className="relative">
-                  <input
-                     type="password"
-                     name="password"
-                     value={formData.password}
-                     onChange={handleChange}
-                     required
-                     className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-purple-600 peer"
-                     placeholder=" "
-                  />
-                  <label className="absolute px-1 text-sm text-purple-600 duration-300 transform scale-75 -translate-y-4 bg-[#fbfbfb] top-2 left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:top-1 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
-                     Password
-                  </label>
-               </div>
+   <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
+      Password
+   </label>
+   <input
+      type="password"
+      name="password"
+      value={formData.password}
+      onChange={handleChange}
+      required
+      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
+   />
+</div>
 
                {/* Company Name Field (New) */}
                <div className="relative">
-                  <input
-                     type="text"
-                     name="company"
-                     value={formData.company}
-                     onChange={handleChange}
-                     required
-                     className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-purple-600 peer"
-                     placeholder=" "
-                  />
-                  <label className="absolute px-1 text-sm text-purple-600 duration-300 transform scale-75 -translate-y-4 bg-[#fbfbfb] top-2 left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:top-1 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
-                     Company Name
-                  </label>
-               </div>
+   <label className="absolute px-1 text-sm text-purple-600 bg-[#fbfbfb] top-[-10px] left-2">
+      Company Name
+   </label>
+   <input
+      type="text"
+      name="company"
+      value={formData.company}
+      onChange={handleChange}
+      required
+      className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-2 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-purple-600"
+   />
+</div>
+
 
                <p className="text-start">Are you in Agency</p>
                <div className="flex items-center space-x-4">
