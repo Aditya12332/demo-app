@@ -1,8 +1,8 @@
 import {  Route, Routes } from "react-router-dom";
-import LoadingScreen from "./pages/LoadingScreen";
-import Login from "./pages/login";
-import Signup from "./pages/Signup";
-import AccountInfo from "./pages/AccountInfo"
+import LoadingScreen from "./components/LoadingScreen";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import AccountInfo from "./components/AccountInfo"
 
 function App() {
    return(
